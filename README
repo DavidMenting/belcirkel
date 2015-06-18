@@ -1,0 +1,22 @@
+
+
+
+
+
+How to install Pocketsphinx
+Install required packages
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install bison libasound2-dev python-dev swig
+
+Compile other packages from source
+wget http://downloads.sourceforge.net/project/cmusphinx/pocketsphinx/5prealpha/pocketsphinx-5prealpha.tar.gz
+tar xvf pocketsphinx-5prealpha.tar.gz
+wget http://downloads.sourceforge.net/project/cmusphinx/sphinxbase/5prealpha/sphinxbase-5prealpha.tar.gz
+tar xvf sphinxbase-5prealpha.tar.gz
+
+
+The keyphrase.list file should look like this, one phrase per line with threshold:
+open the door /1e-40/
+close the door /1e-40/
+how are you /1e-30/

@@ -1,5 +1,6 @@
 #!/usr/local/bin/python
 import sys
+import re
 from dotstar import Adafruit_DotStar
 
 numpixels = 1 # Number of LEDs in strip
@@ -18,17 +19,22 @@ while 1:
     try:
         line = sys.stdin.readline()
     except KeyboardInterrupt:
+        strip.setPixelColor(0, 0x000000)
+        strip.show()
         break
 
     if not line:
         break
 
     strip.setPixelColor(0, 0x000000)
-    strip.show()
+
+    if re.match('INFO: cmn_prior.c',line):
+        strip.setPixelColor(0, 0x0000FF)
 
     # Timestamp and log line to a file that shouldn't become too big
     # See if it matches one of the keywords
     if line.rstrip('. /1e-0123456789\n') in keyphrases:
       print('match')
       strip.setPixelColor(0, 0x00FF00)
-      strip.show()
+
+    strip.show()

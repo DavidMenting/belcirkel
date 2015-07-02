@@ -12,6 +12,8 @@ strip     = Adafruit_DotStar(numpixels, datapin, clockpin)
 
 strip.begin()
 strip.setBrightness(16)
+strip.setPixelColor(0,0xFFFF00)
+strip.show()
 
 keyphrases = [line.rstrip(' /1e-0123456789\n') for line in open('keyphrase.list')]
 
@@ -25,8 +27,6 @@ while 1:
 
     if not line:
         break
-
-    strip.setPixelColor(0, 0x000000)
 
     if re.match('INFO: cmn_prior.c',line):
         strip.setPixelColor(0, 0x0000FF)

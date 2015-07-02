@@ -3,8 +3,8 @@
 # Record from onboard stereo DMICs to AP
 
 # Set the digital input gain to -6dB
-amixer $1 -Dhw:sndrpiwsp cset name='IN2L Digital Volume' 116
-amixer $1 -Dhw:sndrpiwsp cset name='IN2R Digital Volume' 116
+amixer $1 -Dhw:sndrpiwsp cset name='IN2L Digital Volume' 180
+amixer $1 -Dhw:sndrpiwsp cset name='IN2R Digital Volume' 180
 # Configure the input path for HPF with a low cut off for DC removal
 amixer $1 -Dhw:sndrpiwsp cset name='LHPF1 Input 1' IN2L
 amixer $1 -Dhw:sndrpiwsp cset name='LHPF2 Input 1' IN2R
